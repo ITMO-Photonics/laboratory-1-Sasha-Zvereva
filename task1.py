@@ -1,11 +1,6 @@
 import math 
-pi = 3.14    
 def calculate(R, L):
-    volume = pi * R * R * L 
-   
-    return ('Volume: ' +  str(volume))
-  
-    
+    return math.pi*(R**2)*L
     
 R = int(input('Please Enter the radius of a Cylinder: '))
 L = int(input('Please Enter the length of a Cylinder: '))
