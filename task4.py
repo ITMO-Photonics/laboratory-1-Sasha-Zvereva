@@ -2,24 +2,25 @@ import time
 import numpy as np
 import scipy.linalg
 
-N=50
+N=200
 A = np.random.random((N,N))
 k = np.arange(N)
+
 for t in np.linspace(0,10,100):
-        b=k/(1.+k*t)
-x1 = scipy.linalg.solve(A,b)
+    b=k/(1.+k*t)
+    x1 = scipy.linalg.solve(A,b)
 print(x1)
 
 lu = scipy.linalg.lu_factor(A)
 for t in np.linspace(0,10,100):
         b=k/(1.+k*t)
-x2 = scipy.linalg.lu_solve(lu,b)
+        x2 = scipy.linalg.lu_solve(lu,b)
 print(x2)
 
 A2 = scipy.linalg.inv(A)
 for t in np.linspace(0,10,100):
         b=k/(1.+k*t)
-x3 = np.dot(A2,b)
+        x3 = np.dot(A2,b)
 print(x3)
 
 start_time = time.time()
